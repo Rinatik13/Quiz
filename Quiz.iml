@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="FacetManager">
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map>
+          <unit-entry name="com:spring:mvc:orm:hibernate.cfg.xml" value="07c789ef-4a28-463d-9b2e-768430100b53" />
+          <unit-entry name="hibernate.cfg.xml" value="cb6b14d6-6327-40ef-80e6-2abb0f85a27a" />
+        </datasource-map>
+        <naming-strategy-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/java/com/spring/mvc/orm/hibernate.cfg.xml" />
+      </configuration>
+    </facet>
+  </component>
+</module>
