@@ -18,11 +18,12 @@ public class GetAllCountNumberQuestion {
         try {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
-            int result = session.createQuery
-                            ("select count (*) " + " as count FROM library_questions")
+            String res= session.createQuery
+                            ("select count (*) from library_questions")
+                    .uniqueResult().toString();
                     //необходимо проверить работоспособность данного запроса !!! важно !!!
-                    .getMaxResults();
             session.getTransaction().commit();
+            int result = Integer.parseInt(res);
             return result;
         }
         finally {

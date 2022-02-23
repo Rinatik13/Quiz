@@ -11,22 +11,22 @@
     <br>
     <br>
     <form action="gameView" method="post">
-        <div>
+        <div style="flex: auto">
             Question:
             <br>
-            <p>${questionView}</p>
+                <span>${questionView}</span>
         </div>
         <br>
         <br>
-        <div style="flex: auto">
+        <div style="flex: auto; flex-basis: content ">
             <p>${questionAnswer1}</p><input type="radio" name="answer" value="answer1">
             <p>${questionAnswer2}</p><input type="radio" name="answer" value="answer2">
         </div>
         <br>
         <br>
         <div>
-            <p>${questionAnswer3}</p><input type="radio" name="answer3">
-            <p>${questionAnswer4}</p><input type="radio" name="answer4">
+            <p>${questionAnswer3}</p><input type="radio" name="answer">
+            <p>${questionAnswer4}</p><input type="radio" name="answer">
         </div>
         <br>
         <br>

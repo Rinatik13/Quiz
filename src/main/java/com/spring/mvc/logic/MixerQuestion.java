@@ -14,7 +14,7 @@ public class MixerQuestion {
     public String[] mixerResult(Question question){
         String[] cloneAnswer = new String[4];
         String[] myMixerResult = new String[5];
-        myMixerResult[1] = question.getQuestion();
+        myMixerResult[0] = question.getQuestion();
         cloneAnswer[0] = question.getCorrect_answer();
         cloneAnswer[1] = question.getIncorrect_answer_1();
         cloneAnswer[2] = question.getIncorrect_answer_2();

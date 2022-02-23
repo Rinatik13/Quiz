@@ -24,11 +24,11 @@ public class GameController {
                 new AnnotationConfigApplicationContext(MyConfiguration.class);
         MixerQuestion myQuestion = context.getBean("quizMixerQuestion", MixerQuestion.class);
         GetInfoQuestion getInfoQuestion = new GetInfoQuestion();
-        RandomNumberQuestion randomNumberQuestion = new RandomNumberQuestion();
-        GetAllCountNumberQuestion getAllCountNumberQuestion = new GetAllCountNumberQuestion();
-        int result = getAllCountNumberQuestion.randomNum();
-        result = randomNumberQuestion.getRundomNumber(result);
-        Question question = getInfoQuestion.getInfo(result);
+//        RandomNumberQuestion randomNumberQuestion = new RandomNumberQuestion();
+//        GetAllCountNumberQuestion getAllCountNumberQuestion = new GetAllCountNumberQuestion();
+//        int result = getAllCountNumberQuestion.randomNum();
+//        result = randomNumberQuestion.getRundomNumber(result);
+        Question question = getInfoQuestion.getInfo(1); // 1 надо поменять на результат
         String[] myQuestionResult = myQuestion.mixerResult(question);
         model.addAttribute("questionView", myQuestionResult[0]);
         model.addAttribute("questionAnswer1",myQuestionResult[1]);
