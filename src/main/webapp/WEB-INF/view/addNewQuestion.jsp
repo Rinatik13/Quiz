@@ -44,7 +44,7 @@
                placeholder="Answer" style="border-radius: 3px; text-align: center">
         <br>
         <br>
-        <input type="submit" value="Registration" style="border-radius: 3px">
+        <input type="submit" value="Add question" style="border-radius: 3px">
     </form>
 </div>
 

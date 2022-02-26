@@ -12,7 +12,8 @@
 <form action="game" method="post">
     <input type="submit" value="START">
 </form>
-
+<br>
+<br>
 <form action="addQuestion" method="post">
     <input type="submit" value="Add question">
 </form>
