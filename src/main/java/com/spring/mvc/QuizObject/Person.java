@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Objects;
 
 // в данном классе прописаны все поля которые несут информацию о пользователе
 // поле id показывает порядковый номер пользователя в БД
@@ -30,6 +31,19 @@ public class Person {
     private String password;
     @Column(name = "scope")
     private int scope;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id && scope == person.scope && name.equals(person.name) && login.equals(person.login) && password.equals(person.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, login, password, scope);
+    }
 
     @Override
     public String toString() {

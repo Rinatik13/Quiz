@@ -3,7 +3,7 @@ package com.spring.mvc.controllers;
 import com.spring.mvc.QuizConfiguration.MyConfiguration;
 import com.spring.mvc.QuizObject.Question;
 import com.spring.mvc.logic.MixerQuestion;
-import com.spring.mvc.logic.RandomNumberQuestion;
+import com.spring.mvc.logic.GetRandomNumber;
 import com.spring.mvc.orm.GetAllCountNumberQuestion;
 import com.spring.mvc.orm.GetInfoQuestion;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -19,16 +19,16 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class GameController {
     @RequestMapping ("game")
-    public String quizGame(HttpServletRequest request, Model model){
+    public String quizGame(Model model){
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(MyConfiguration.class);
         MixerQuestion myQuestion = context.getBean("quizMixerQuestion", MixerQuestion.class);
         GetInfoQuestion getInfoQuestion = new GetInfoQuestion();
-//        RandomNumberQuestion randomNumberQuestion = new RandomNumberQuestion();
-//        GetAllCountNumberQuestion getAllCountNumberQuestion = new GetAllCountNumberQuestion();
-//        int result = getAllCountNumberQuestion.randomNum();
-//        result = randomNumberQuestion.getRundomNumber(result);
-        Question question = getInfoQuestion.getInfo(1); // 1 надо поменять на результат
+        GetRandomNumber getRandomNumber = new GetRandomNumber();
+        GetAllCountNumberQuestion getAllCountNumberQuestion = new GetAllCountNumberQuestion();
+        int result = getAllCountNumberQuestion.randomNum();
+        result = getRandomNumber.getRundomNumber(result);
+        Question question = getInfoQuestion.getInfo(result);
         String[] myQuestionResult = myQuestion.mixerResult(question);
         model.addAttribute("questionView", myQuestionResult[0]);
         model.addAttribute("questionAnswer1",myQuestionResult[1]);

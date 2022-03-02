@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 // данный класс получает общее количество вопросов в БД
 @Component
 public class GetAllCountNumberQuestion {
@@ -18,12 +20,15 @@ public class GetAllCountNumberQuestion {
         try {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
-            String res= session.createQuery
-                            ("select count (*) from library_questions")
-                    .uniqueResult().toString();
+//            String res = session.createQuery
+//                            ("select count (*) from library_questions")
+//                    .uniqueResult().toString();
+//
+            List<Question> questionList = session.createQuery("from Question")
+                    .getResultList();
                     //необходимо проверить работоспособность данного запроса !!! важно !!!
             session.getTransaction().commit();
-            int result = Integer.parseInt(res);
+            int result = questionList.size();
             return result;
         }
         finally {

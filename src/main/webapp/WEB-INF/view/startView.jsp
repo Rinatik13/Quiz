@@ -10,7 +10,7 @@
 <div style="text-align: center">
     <div>
         <h2>Hello!</h2>
-        <form action="personInfoView" method="post">
+        <form action="resultLoginAndPassword" method="post">
             Login
             <br>
             <input type="text" name="person.login"

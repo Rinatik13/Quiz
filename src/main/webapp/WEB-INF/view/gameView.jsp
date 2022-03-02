@@ -10,7 +10,7 @@
     <h1>Game!</h1>
     <br>
     <br>
-    <form action="gameView" method="post">
+    <form action="game" method="post">
         <div style="flex: auto">
             Question:
             <br>
@@ -18,13 +18,13 @@
         </div>
         <br>
         <br>
-        <div style="flex: auto; flex-basis: content ">
+        <div style="display: flex; justify-content: center">
             <p>${questionAnswer1}</p><input type="radio" name="answer" value="answer1">
             <p>${questionAnswer2}</p><input type="radio" name="answer" value="answer2">
         </div>
         <br>
         <br>
-        <div>
+        <div style="display: flex; justify-content: center">
             <p>${questionAnswer3}</p><input type="radio" name="answer">
             <p>${questionAnswer4}</p><input type="radio" name="answer">
         </div>
